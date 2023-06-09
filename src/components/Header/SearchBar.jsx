@@ -13,9 +13,13 @@ const SearchBar = () => {
   let [searchParams] = useSearchParams();
   const handleSearch = () => {
     navigate({
-      search: createSearchParams({
-        search: search,
-      }).toString(),
+      search: createSearchParams(
+        search
+          ? {
+              search: search,
+            }
+          : {}
+      ).toString(),
     });
   };
 
@@ -24,8 +28,11 @@ const SearchBar = () => {
   useEffect(() => {
     if (!searchFilter) {
       setSearch(""); //To reset the textfield value
+    } else {
+      console.log(searchFilter);
+      setSearch(searchFilter);
     }
-  }, [searchParams]);
+  }, [searchFilter]);
 
   return (
     <Grid
