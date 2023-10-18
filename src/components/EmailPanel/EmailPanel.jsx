@@ -85,7 +85,6 @@ const EmailPanel = () => {
       <div
         style={{
           backgroundColor: "#F7F7F7",
-          borderRadius: "20px",
           marginRight: isMobile ? "10px" : "8px",
         }}
       >

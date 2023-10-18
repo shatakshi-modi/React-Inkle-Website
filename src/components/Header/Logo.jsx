@@ -1,4 +1,5 @@
-import { useMediaQuery } from "@mui/material";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
+import EmailLogo from "../../logoEmail.svg";
 import React from "react";
 
 const Logo = () => {
@@ -6,8 +7,8 @@ const Logo = () => {
 
   return (
     <img
-      src="https://uploads-ssl.webflow.com/62cd4e1c91e7d377d6328e70/62ce75472b272f9cca3fa366_Inkle%20Logo.svg"
-      alt="inkle"
+      src={EmailLogo}
+      alt="email"
       style={
         isMobile
           ? {}

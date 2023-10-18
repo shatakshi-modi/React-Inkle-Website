@@ -17,18 +17,8 @@ const EmailModel = ({ open, setOpen, data }) => {
   };
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
-      <DialogTitle sx={{ mb: 0 }}>Email Details</DialogTitle>
+      <DialogTitle sx={{ mb: 0 }}>{data.subject}</DialogTitle>
       <DialogContent sx={{ py: 2 }}>
-        <TextField
-          label="Subject"
-          variant="outlined"
-          fullWidth
-          defaultValue={data.subject}
-          InputProps={{
-            readOnly: true,
-          }}
-          sx={{ mb: 2, mt: 2 }}
-        />
         <TextField
           label="Message"
           variant="outlined"
@@ -38,7 +28,7 @@ const EmailModel = ({ open, setOpen, data }) => {
           InputProps={{
             readOnly: true,
           }}
-          sx={{ mb: 2 }}
+          sx={{ mb: 2, mt: 2 }}
         />
       </DialogContent>
     </Dialog>

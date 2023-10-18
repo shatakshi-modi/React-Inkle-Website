@@ -5,14 +5,7 @@ import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
-    <Grid
-      container
-      sx={{
-        mt: "15px",
-      }}
-      justifyContent={"space-around"}
-      spacing={2}
-    >
+    <Grid container justifyContent={"space-around"} spacing={1}>
       <Grid item xs={12} md={2}>
         <Logo></Logo>
       </Grid>

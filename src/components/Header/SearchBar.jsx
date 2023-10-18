@@ -11,15 +11,11 @@ const SearchBar = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   let [searchParams] = useSearchParams();
-  const handleSearch = () => {
+  const handleSearch = (e) => {
     navigate({
-      search: createSearchParams(
-        search
-          ? {
-              search: search,
-            }
-          : {}
-      ).toString(),
+      search: createSearchParams({
+        search: e.target.value,
+      }).toString(),
     });
   };
 
@@ -29,7 +25,6 @@ const SearchBar = () => {
     if (!searchFilter) {
       setSearch(""); //To reset the textfield value
     } else {
-      console.log(searchFilter);
       setSearch(searchFilter);
     }
   }, [searchFilter]);
@@ -49,14 +44,9 @@ const SearchBar = () => {
           size="small"
           fullWidth
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          sx={isMobile ? { pl: 1 } : {}}
+          onChange={handleSearch}
+          sx={isMobile ? { pl: 1 } : { mt: 2 }}
         />
-      </Grid>
-      <Grid item xs={isMobile ? 3 : 3} md={2}>
-        <Button variant="outlined" fullWidth={!isMobile} onClick={handleSearch}>
-          Search
-        </Button>
       </Grid>
     </Grid>
   );
